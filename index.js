@@ -25,8 +25,8 @@ const questions = [
     },
     {
         type: "input",
-        message: "credits",
-        name: "Who contributed to this project?"
+        message: "Who contributed to this project?",
+        name: "credits"
     },
     {
         type: "list",
