@@ -1,7 +1,9 @@
+// Imports needed
 const fs = require('fs')
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
 
+// Question array that holds all inquirer questions
 const questions = [
     {
         type: "input",
@@ -41,6 +43,7 @@ const questions = [
     },
 ];
 
+// This function uses fs to take in data and create a file based on the function calls params
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function(err) {
         if(err) {
@@ -51,6 +54,7 @@ function writeToFile(fileName, data) {
     })
 }
 
+// Initializes inquirer, and based on user input, calls writeToFile passing in params needed to create a README.md file
 function init() {
     inquirer.prompt(questions)
     .then(function(data) {
@@ -58,5 +62,5 @@ function init() {
     })
 }
 
-// Function call to initialize app
+// Function call to initialize app when node index.js is ran in the terminal
 init();

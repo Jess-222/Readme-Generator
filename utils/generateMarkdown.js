@@ -1,3 +1,4 @@
+// This function checks to see the value of data.license, and returns the correlated badge
 function renderLicenseBadge(data) {
   if (data.license === "None") {
     ''
@@ -13,6 +14,7 @@ function renderLicenseBadge(data) {
   }
 }
 
+// This function checks to see the value of data.license, and returns the correlated link
 function renderLicenseLink(data) {
   if (data.license === "None") {
     ''
@@ -28,6 +30,7 @@ function renderLicenseLink(data) {
   }
 }
 
+// This function will disregard inserting a license section, if no license is needed
 function renderLicenseSection(data) {
   if (data.license === "None") {
     return ''
@@ -37,6 +40,7 @@ ${renderLicenseBadge(data)} - ${renderLicenseLink(data)}`
   }
 }
 
+// This function will disregard inserting a license in the table of contents, if no license is needed
 function tableOfContentsLicenseLink(data) {
   if (data.license === "None") {
     return ''
@@ -45,6 +49,7 @@ function tableOfContentsLicenseLink(data) {
   }
 }
 
+// This function returns a string template for the readme file to be styled in
 function generateMarkdown(data) {
   return `# ${data.title}
   ## Table of Contents
